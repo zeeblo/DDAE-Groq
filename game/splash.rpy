@@ -205,7 +205,11 @@ label splashscreen:
                 hide rlly with Dissolve(3)
                 "Whatever."
 
-        "In order for the mod to work correctly please remember to install ollama by going to \"ollama.com\"."
+        "To use the API (groq) go to groq.com and sign up for account (it's completely free)"
+        "Go to https://console.groq.com/keys and create an API Key. Make sure to save that somewhere safe and don't share it with anyone."
+        "Once you have that, remember to go to the settings (in this mod) and click on API Key. This is where you'll need to paste your key that you saved."
+        
+        "If you plan on using a local model please remember to install ollama by going to \"ollama.com\"."
         "Simply download the application and run it."
         "No GUI will popup, it'll simply run on your device with a small icon displayed in your taskbar."
         "Open up a terminal on your device and type \"ollama pull llama3\"."
