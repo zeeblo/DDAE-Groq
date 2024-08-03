@@ -1272,8 +1272,8 @@ screen preferences():
                 vbox:
                     style_prefix "radio"
                     label _("AI Type")
-                    textbutton _("API") action [SetVariable("llm_mode", False)]
                     textbutton _("LLM") action [SetVariable("llm_mode", True)]
+                    textbutton _("API") action [SetVariable("llm_mode", False)]
                     
 
 
@@ -1337,7 +1337,7 @@ screen preferences():
                 vbox:
                     textbutton _("Model Config") action ShowMenu("llm_model_config_screen")
                 vbox:
-                    textbutton _("API Key") action Function()
+                    textbutton _("API Key") action Function(FinishEnterAPIKey)
                 vbox:
                     textbutton _("Change Username") action Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName))
 
