@@ -1,0 +1,700 @@
+<html>
+<head>
+<title>Doki Doki AI Edition - Readme</title>
+<style>
+
+body {
+  margin: 0;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  line-height: 24px;
+  font-family: 'Arial';
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  background-color: #1b1b1f;
+  font-synthesis: style;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+section {
+  padding: 50px;
+}
+
+
+h1 {
+  font-size: 40px;
+}
+
+footer {
+  text-align: center;
+  color: rgba(235, 235, 245, 0.6);
+  border-top: 1px solid;
+  border-color: black;
+  padding: 50px;
+}
+
+p {
+  color: #cfcfcf
+}
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.name {
+  max-width: 392px;
+  letter-spacing: -0.4px;
+  line-height: 40px;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+
+.clip {
+  background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent
+}
+
+
+
+
+.text {
+  margin-top: 0px;
+}
+
+
+.tagline {
+  color: rgba(235, 235, 245, 0.6);
+  line-height: 36px;
+  font-size: 24px;
+  font-weight: 550;
+  margin-top: 0;
+}
+
+
+.actions {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.action {
+  margin-right: 20px;
+}
+
+a{
+
+  display: inline-block;
+  border: 1px solid transparent;
+  text-align: center;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  color: white;
+  transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+}
+
+.started-btn {
+  background-color: #3e63dd;
+  border-color: #3e63dd;
+  color: white;
+  padding: 0 20px;
+  border-radius: 20px;
+  line-height: 38px;
+  font-size: 14px;
+
+}
+
+
+
+.github-btn {
+  background-color: #32363f;
+  border-color: #32363f;
+  color: white;
+  padding: 0 20px;
+  border-radius: 20px;
+  line-height: 38px;
+  font-size: 14px;
+
+}
+
+
+.image {
+  flex-grow: 1;
+  order: 2;
+  margin: 0;
+  min-height: 100%;
+}
+
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transform: translate(-32px, -32px);
+
+  position: relative;
+  margin: 0 auto;
+}
+
+.image-bg {
+  background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  width: 192px;
+  height: 192px;
+  filter: blur(68px);
+  transform: translate(-50%, -50%);
+}
+
+
+.image-src {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 320px;
+  max-height: 320px;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+.main-option {
+  background-color: #202127;
+  height: 150px;
+  border-radius: 20px;
+  width: 240px;
+  padding: 20px;
+  margin-right: 20px;
+}
+
+
+.main-opt-inside {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.icon-img {
+  background-color: rgba(101, 117, 133, 0.16);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  font-size: 24px;
+}
+
+.main-opt-inside span{
+  font-weight: 600;
+  margin-bottom: 10px;
+  
+}
+
+
+.main-opt-inside a{
+  font-weight: 200;
+  color: rgba(235, 235, 245, 0.6);
+  text-align: left;
+}
+
+
+.l-break {
+  background-color: #646cff;
+  height: 1px;
+}
+
+
+.note-container {
+  background-color: rgba(100, 108, 255, .08);
+  border-color: #646cff;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  color: #bcc0ff;
+  border-radius: 25px;
+  width: 65%;
+  padding: 10px;
+  font-family: math;
+}
+
+
+.note-container h1 {
+  font-size: small;
+}
+
+
+.note-container-red {
+  background-color: rgba(255, 100, 100, 0.08);
+  border-color: #ff6464;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  color: #ffbcbc;
+  border-radius: 25px;
+  width: 65%;
+  padding: 10px;
+  font-family: system-ui;
+}
+
+
+.note-container-red h1 {
+  font-size: small;
+}
+
+
+@media (min-width: 960px) {
+
+  .container {
+    flex-direction: row;
+    }
+
+  .main {
+      max-width: 592px;
+  }
+
+  .name {
+    line-height: 64px;
+    font-size: 56px;
+  }
+}
+
+
+@media (min-width: 640px) {
+  .name, .text {
+        max-width: 576px;
+        line-height: 56px;
+        font-size: 48px;
+    }
+}
+
+
+</style>
+</head>
+<body>
+  <section>
+    <div class="container">
+      <div class="main">
+        <h1 class="name">
+          <span class="clip">Doki Doki AI Edition</span>
+        </h1>
+        <p class="name text">Experience a unique playthrough</p>
+        <p class="tagline">Setup your own version of DDAE with ease!</p>
+
+        <div class="actions">
+          <div class="action"><a class="started-btn" href="#setup">Get Started</a></div>
+          <div class="action"><a class="github-btn" href="https://github.com/doki-doki-ai-edition" target="_blank">View on GitHub</a></div>
+        </div>
+      </div>
+
+
+      <div class="image">
+        <div class="image-container">
+          <div class="image-bg"></div>
+          <img class="image-src" src="game/assets/imgs/gui/logo.png">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="main-option">
+        <div class="main-opt-inside">
+          <div class="icon-img">
+            <img style="width: 100%;" src="game/assets/imgs/gui/logo.png" alt="DDAE Logo">
+          </div>
+          <span>Mod</span>
+          <a href="#setup">Getting Started</a>
+        </div>
+      </div>
+
+
+      <div class="main-option">
+        <div class="main-opt-inside">
+          <div class="icon-img">
+            <span style="margin-bottom: 1px;" >🎲</span>
+          </div>
+          <span>Settings</span>
+          <a href="#settings">Examples</a>
+        </div>
+      </div>
+
+
+      <div class="main-option">
+        <div class="main-opt-inside">
+          <div class="icon-img">
+            <span style="margin-bottom: 1px;">❓</span>
+          </div>
+          <span>Frequently Asked Questions</span>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+
+
+      <div class="main-option">
+        <div class="main-opt-inside">
+          <div class="icon-img">
+            <span>🧰</span>
+          </div>
+          <span>Helpful Resource</span>
+          <a target="_blank" href="https://discord.gg/rDA7ehBSq7">Support Server</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="display: flex; justify-content: center;">
+    <span>
+      HTML design heavily referenced from <a target="_blank" href="https://vitejs.dev/">https://vitejs.dev/</a>
+    </span>
+  </section>
+
+  <section>
+    <div class="container" style="flex-direction: column;">
+      <h1 id="setup" >Setup</h1>
+
+      <ul>
+        <li>Make sure you have a fresh install of DDLC <a href="https://ddlc.moe/">https://ddlc.moe/</a></li>
+        <li>Download the latest version of the DDAE mod on this github page <a href="https://github.com/doki-doki-ai-edition/Mod/releases">https://github.com/doki-doki-ai-edition/Mod/releases</a></li>
+      </ul>
+
+      <h2 style="color: #646cff">Ollama</h2>
+
+      <p>
+        <b>Overview:</b> Ollama is an open-source project that allows people to setup local language models on their machine in a far more user friendly way. They have both uncensored and censored models and the models are quantized (compressed) to run on low-end devices.
+      </p>
+
+      <p>
+        <b>Pros</b>
+      </p>
+      <ul>
+        <li>Run models locally on your machine</li>
+        <li>Easy to setup</li>
+        <li>Privacy: Even if your internet is off, it'll still work</li>
+        <li>Uncensored: Freedom to say whatever</li>
+      </ul>
+
+      <p>
+        <b>Cons</b>
+      </p>
+      <ul>
+        <li>Very Slow (depending on your hardware)</li>
+        <li>Quality isn't that great especially compared to what some APIs offer</li>
+      </ul>
+
+
+      <p>
+        <b>Let's Start!</b>
+      </p>
+
+      <ul>
+        <li>Go to <a target="_blank" href="https://ollama.com/download">https://ollama.com/download</a></li>
+        <li>Select Windows (or whichever operating system you're using)</li>
+        <li>Click on Download</li>
+      </ul>
+
+      <p>
+        Once it's downloaded, run the application.
+        If you're on windows you should see a small icon in your taskbar that looks like this
+      </p>
+
+      <img style="width: 80px;" src="game/assets/imgs/help_page/llama_task.png" alt="llama taskbar">
+
+      <ul>
+        <li>Open up a terminal on your device (eg. cmd+r if you're using windows, then type "cmd" and press enter)</li>
+        <li>In the terminal type "ollama pull llama3" (or any model you find in https://ollama.com/library/)</li>
+      </ul>
+
+      <span style="color: #64ff6e">
+        You're Done!
+      </span>
+      <p>
+        This should be roughly 4.7 gigabytes and once it's done installing you can run the mod!
+      </p>
+    </div>
+    
+  </section>
+
+
+  <section>
+    <div class="container" style="flex-direction: column;">
+      <h1 id="settings">Settings</h1>
+
+      <div>
+        <h2>AI Type</h2>
+      
+        <span>
+          <b>Local LLM (Large Language Model)</b>
+        </span>
+        <p>
+          Shows the default local models available in the "Model Name" section.
+        </p>
+          
+      
+      </div>
+
+      <div class="l-break"></div>
+
+      <div>
+        <h2>Model Name</h2>
+      
+        <span>
+          <b>Suggested Models</b>
+        </span>
+        <p>
+          Models that have been tested to work properly in accordance to the default prompt given
+        </p>
+          
+        
+        <span>
+          <b>Other Models</b>
+        </span>
+        <p>
+          Models that may not be as high quality or haven't been frequently tested
+        </p>
+      </div>
+
+      <div class="l-break"></div>
+
+      <div>
+        <h2>Model Config</h2>
+      
+        <div>
+          <span>
+            <b>Context Window</b>
+          </span>
+          <p>
+            The maximum amount of tokens (messages) that will be remembered.
+          </p>
+          
+          <p>
+            Note that the more context you give it, the slower responses may be and the more memory you use on your device.
+          </p>
+  
+          <p>
+            Make sure to check the context window of a model. For example:
+          </p>
+  
+          <p>
+            Go to <a target="_blank" href="https://ollama.com/library/llama3:8b">https://ollama.com/library/llama3:8b</a>
+          </p>
+          
+          <img src="game/assets/imgs/help_page/model_show.png" alt="model display">
+
+          <p>
+            Click on "model" (and wait since it may take a while to load)
+          </p>
+          <p>
+            Look for context_length
+          </p>
+
+          <img src="game/assets/imgs/help_page/model_context_len.png" alt="model context window">
+
+          <p>
+            If you want to use more than a 8192 token limit then you can check out other models such as
+          </p>
+          
+          <a target="_blank" href="https://ollama.com/library/llama3-gradient">https://ollama.com/library/llama3-gradient</a>
+
+          <p>
+            which has a 1M context window.
+            You won't be able to use the full 1M tokens because of the hardware requirement for something like that but depending on your hardware you could use a lot more than 8k.
+          </p>
+        </div>
+
+        
+        <div>
+          <span>
+            <b>Temperature</b>
+          </span>
+          <p>
+            Determines how random/creative the output is.
+          </p>
+
+          <p>
+            Higher = More random and creative but if it's too high, the responses can be nonsensical and may not even follow the system prompt appropriately.
+          </p>
+
+          <p>
+            Lower = Less random and predictable. The model chooses the most likely word to respond with but ends up sounding more robotic.
+          </p>
+
+
+          <p>
+            The typical default temperature is "1" but I've personally found 0.6 to be a good sweet spot, just high enough to be creative but low enough to give good responses.
+          </p>
+        </div>
+
+        <div style="margin-bottom: 15px;" class="note-container-red">
+          <h1><b>WARNING</b></h1>
+          <span>It is highly advisable to leave the temperature on the default settings because it has been shown to follow the prompt far more accurately when testing compared to other numbers.</span>
+        </div>
+
+
+        <div>
+          <span>
+            <b>Seed</b>
+          </span>
+          <p>
+            Deterministic responses. If set to a specific seed, your outputs will be pretty much exactly the same or relatively similar if you feed it the same input.
+          </p>
+
+          <p>
+            Eg. If you have a seed of 22 and your input response goes like this:
+          </p>
+
+          <p>
+            user: "how are you monika?"<br>
+            monika: "I'm not doing too well to be honest..."
+          </p>
+
+          <p>
+            Assuming the system prompt is the same and your response is formatted in the exact same way, you'll always get that same output (or something very similar).
+          </p>
+        </div>
+
+
+
+        <div>
+          <span>
+            <b>Default Prompt</b>
+          </span>
+          <p>
+            In game/assets/prompts there is a prompt_templates.json file that stores all the default prompts for every character.
+          </p>
+
+          <p>
+            You can edit the backstory to your liking.
+          </p>
+        </div>
+      </div>
+
+
+
+
+    </div>
+    
+  </section>
+
+
+
+  <section>
+    <div class="container" style="flex-direction: column;">
+      <h1 id="faq">Frequently Asked Questions</h1>
+  
+      <div>
+        <h2>Are my chats private?</h2>
+        <p>
+          Yes. Your chats are completely localized on your machine, even if you turn your internet off, it'll still work.
+        </p>
+          
+        
+        <h2>Are the models uncensored</h2>
+        <p>
+          It depends on what model you're using.
+          You can go to <a href="https://ollama.com/library ">https://ollama.com/library</a> to find uncensored models but they may not follow the system prompt as well which would cause the game to not function correctly.
+        </p>
+
+        <p>
+          Secondly, they may not be entirely uncensored. There are certain questions that it may refuse, but since it's a local model you can attempt to jailbreak it as much as you want.
+        </p>
+
+
+        <h2>Can I trust Ollama?</h2>
+
+        <p>
+          As much as you trust all the other apps you use daily.
+          Jeffrey Morgan is one of the founders and he has a credible background by previously working for docker, twitter and google.
+          
+          The project is also used by google in firebase <a target="_blank" href="https://firebase.google.com/docs/genkit/plugins/ollama">https://firebase.google.com/docs/genkit/plugins/ollama</a>        
+          And obviously, the project is open-sourced.
+        </p>
+
+
+        <h2>Why do the models sometime return "ERROR"?</h2>
+
+        <p>
+          This happens when the model doesn't respond with the instructed format. This typically happens on regular models if you say something too provacative. 
+
+          There's a few solutions to this.
+          
+          The first is to use an uncensored model. 
+          
+          The second thing you could try is continuing the chat by ignoring the error message and try to force the ai back into a roleplay state
+          
+          And the 3rd thing you could try is just jailbreaking the ai model by editing the
+          system prompt to make the ai say anything.
+        </p>
+
+
+        <h2>Why does the response keep loading?</h2>
+
+        <p>
+          If your hardware isn't that good then it could likely mean that it's just a hardware limitation. HOWEVER. If it's taking abnormally long
+          check the log.txt file, there may be an error in there which would have cauesed the game to be in a constant "Loading..." state.
+          Post your log.txt file in the discord #support channel
+        </p>
+
+
+        <h2>What hardware do I need?</h2>
+        <p>
+          You should be able to run the mod on low-end devices like a laptop with 4GB of RAM
+          and 4GB of VRAM but the speed at which you get a response is going to be slow.
+          
+          If you want faster responses you need more VRAM. Regular RAM allows you to run models.
+        </p>
+
+
+        <h2>I keep getting this error</h2>
+
+
+          <img src="game/assets/imgs/help_page/traceback.png" alt="traceback error">
+
+        <p>
+          When in doubt, restart.
+          
+          This typically means the model didn't properly generate a background when you first loaded the game.
+          To fix this you can completely close the game and try loading a new one.
+          
+          You could also edit the chat file for the old world and try loading it again.
+
+        </p>
+
+      </div>
+  
+    </div>
+  </section>
+
+  <footer>
+    <span> <b>Not affiliated with Team Salvato. Please support the official release <a href="https://ddlc.moe">https://ddlc.moe</a></b></span>
+  </footer>
+ 
+</body>
+</html>

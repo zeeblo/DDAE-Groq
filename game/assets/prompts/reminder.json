@@ -1,0 +1,29 @@
+{
+    "emotes": " (Remember that the only [FACE] type responses should be: {{emotes}}. And must only have {{body}} as [BODY] responses. ONLY do this if {{char}} is speaking)",
+    "generic_response": "[SCENE] clubroom [FACE] happy [BODY] relaxed [CONTENT] ... [END]",
+    "backup_prompt": [
+        {
+          "role": "user",
+          "content": "continue"
+        },
+        {
+          "role": "assistant",
+          "content": "[SCENE] clubroom [FACE] happy [BODY] relaxed [CONTENT] Hey [END]"
+        }
+    ],
+    "backup_prompt_space": [
+      {
+        "role": "user",
+        "content": "umm..."
+      },
+      {
+        "role": "assistant",
+        "content": "[CONTENT] We're alone now.  [END]"
+      }
+  ],
+  "bodies": {
+    "explain": " (used when {{char}} is explaining something)",
+    "relaxed": " ({{char}}'s default body position)",
+    "excited": " (used when {{char}} is excited)"
+  }
+}
