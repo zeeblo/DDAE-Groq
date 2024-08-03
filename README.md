@@ -34,7 +34,7 @@ Paste in the API key you copied from earlier
 
 <img style="width: 480px;" src="https://i.imgur.com/pneebBb.png" alt="ddlc-token">
 
-
+### You're done!
 
 ---
 
