@@ -1,7 +1,7 @@
 
 
 
-define config.name = "Doki Doki AI Edition (groq)"
+define config.name = "DDAE (groq)"
 
 
 
@@ -25,7 +25,7 @@ define gui.about = _("")
 
 
 
-define build.name = "DDAE"
+define build.name = "DDAE-groq"
 
 
 

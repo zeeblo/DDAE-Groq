@@ -545,9 +545,7 @@ init python:
         renpy.hide_screen("model_name_input")
 
     def FinishEnterAPIKey():
-        persistent.chatToken = chatToken
-        renpy.save_persistent()
-        renpy.hide_screen("APIKey_name_input")
+        renpy.jump_out_of_context("apikey_label")
 
     def FinishEnterContextWindow():
         persistent.context_window = context_window
@@ -585,6 +583,8 @@ init python:
         renpy.save_persistent()
         renpy.hide_screen("prompt_header_input")
         renpy.show_screen("llm_model_config_screen")
+
+        
 
 
     def SwitchToModelConfig():
@@ -1084,6 +1084,8 @@ screen select_model_name_screen():
     $ fav_local_models = chat_model_dict["llms"]["suggested"]
     $ other_local_models = chat_model_dict["llms"]["other"]
 
+    $ fav_api_models =  chat_model_dict["groq"]["suggested"]
+    $ other_api_models = chat_model_dict["groq"]["other"]
 
     $ important_info = "Type \"ollama run (model name)\" in a console on your computer.\nFor example: ollama run llama3" if llm_mode == True else "Make sure you're using the correct API key for the model name you select."
     use game_menu(_("Models"), scroll="viewport"):
@@ -1112,6 +1114,16 @@ screen select_model_name_screen():
                     label _(f"Other Models")
                     for model in other_local_models:
                         textbutton _(f"{model}") action Show(screen="basic_popup", title="Local Models", message="Sucessfully updated model!", ok_action=Function(FinishUpdateModelName, model))
+
+                else:
+
+                    label _(f"Suggested Models")
+                    for model in fav_api_models:
+                        textbutton _(f"{model}") action Show(screen="basic_popup", title="API Models", message="Sucessfully updated model!", ok_action=Function(FinishUpdateModelName, model))
+
+                    label _(f"Other Models")
+                    for model in other_api_models:
+                        textbutton _(f"{model}") action Show(screen="basic_popup", title="API Models", message="Sucessfully updated model!", ok_action=Function(FinishUpdateModelName, model))
 
 
                 textbutton _("Custom Model") action Jump("custom_chat_model_label")
@@ -1260,7 +1272,9 @@ screen preferences():
                 vbox:
                     style_prefix "radio"
                     label _("AI Type")
+                    textbutton _("API") action [SetVariable("llm_mode", False)]
                     textbutton _("LLM") action [SetVariable("llm_mode", True)]
+                    
 
 
 
@@ -1322,6 +1336,8 @@ screen preferences():
                     textbutton _("Model Name") action ShowMenu("select_model_name_screen")
                 vbox:
                     textbutton _("Model Config") action ShowMenu("llm_model_config_screen")
+                vbox:
+                    textbutton _("API Key") action Function()
                 vbox:
                     textbutton _("Change Username") action Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName))
 
