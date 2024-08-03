@@ -2,6 +2,40 @@ This is an altered version of the [Doki Doki AI Edition](https://github.com/doki
 
 If Groq ever requires a paid sub then this repo will be archived or deleted to comply with Team Salvato's IP Guidelines.
 
+
+
+
+## Groq
+
+**Overview:** Groq is an API that let's you run a few open sourced models such as llama3, mixtral, mistral  etc. at amazing speeds. 
+
+**Let's start**
+
+- Go to https://console.groq.com/login
+- Signup with your whichever account you want
+- Go to https://console.groq.com/keys
+- Click "Create API Key"
+- Copy the key **and make sure you save it somewhere**
+
+In DDAE click on settings and make sure "AI Type" is set to "API"
+
+<img style="width: 180px;" src="https://i.imgur.com/jXbFL0d.png" alt="ai type">
+
+Next click on "Model Names" and select any model you want.
+
+<img style="width: 280px;" src="https://i.imgur.com/c0wjlPh.png" alt="model names">
+
+Go back to the main settings and select "API Key"
+
+<img style="width: 580px;" src="https://i.imgur.com/0AmMdUk.png" alt="ddlc api key">
+
+
+Paste in the API key you copied from earlier
+
+<img style="width: 480px;" src="https://i.imgur.com/pneebBb.png" alt="ddlc-token">
+
+
+
 ---
 
 Doki Doki AI Edition (DDAE) is a DDLC mod that implements a more interactive form of roleplay by using sprites to spice up the AI generated text.
