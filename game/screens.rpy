@@ -322,9 +322,9 @@ image input_caret:
         linear 0.35 alpha 1
         repeat
 
+
 screen input(prompt):
     style_prefix "input"
-
     window:
         vbox:
             xanchor 0.0
@@ -332,16 +332,9 @@ screen input(prompt):
             xsize 774
             ypos 55
 
-            if persistent.in_edit_prompt:
-                viewport:
-                    scrollbars "vertical"
-                    mousewheel True
-                    draggable True
-                    text prompt style "input_prompt"
-                    input id "input"
-            else:
-                text prompt style "input_prompt"
-                input id "input"
+            text prompt style "input_prompt"
+            input id "input"
+
 
     # window:
 
@@ -352,6 +345,28 @@ screen input(prompt):
 
     #     text prompt style "input_prompt"
     #     input id "input"
+
+
+
+
+screen input_long(prompt):
+    style_prefix "input"
+
+    frame:
+        background Frame("gui/frame.png", Borders(25, 25, 25, 25))
+        xalign 0.5
+        yalign 0.5
+        xpadding 30
+        ypadding 30
+
+        vbox:
+            text prompt style "input_prompt"
+        vbox:
+            viewport:
+                scrollbars "vertical"
+                mousewheel True
+                draggable True
+                input id "input"
 
 
 

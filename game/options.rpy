@@ -12,7 +12,7 @@ define gui.show_name = False
 
 
 
-define config.version = "0.1.0-api"
+define config.version = "1.1.4-api"
 
 
 
