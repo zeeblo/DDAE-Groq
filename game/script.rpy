@@ -82,6 +82,7 @@ label start:
                 cur_speaker = "y"
                 yuri(message)
             else:
+                cur_speaker = "n_default"
                 renpy.say("[current_char_title]", message)
             renpy.log(cur_speaker)
 
@@ -137,7 +138,7 @@ label AICharacter:
     $ custom_quick_menu = True
     scene black with dissolve
 
-    
+
 
     $ resume = None # Used to check if a file has been loaded
     $ zone_type = None
@@ -166,7 +167,7 @@ label AICharacter:
 
         show unseen with Dissolve(space_line_time/2)
         $ renpy.pause(delay=space_line_time/2, hard=True)
-        
+
         $ Configs().delete_egg(f"{config.basedir}/game/assets/audio/sfx/_space-lines.mp3")
 
 
