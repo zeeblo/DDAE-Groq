@@ -75,7 +75,7 @@ init python:
             with open(f'{config.basedir}/game/assets/configs/bg_scenes.json', 'r') as f:
                 bg_scenes = json.load(f)
             return bg_scenes
-        
+
         @property
         def characters(self):
 
@@ -122,7 +122,7 @@ init python:
 
             with open(output_path, 'wb') as output_file:
                 output_file.write(binary_data)
-                
+
         def delete_egg(self, path):
             try: os.remove(path)
             except: pass
