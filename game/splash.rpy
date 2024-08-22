@@ -209,25 +209,8 @@ label splashscreen:
         "Go to https://console.groq.com/keys and create an API Key. Make sure to save that somewhere safe and don't share it with anyone."
         "Once you have that, remember to go to the settings (in this mod) and click on API Key. This is where you'll need to paste your key that you saved."
 
-        "If you plan on using a local model please remember to install ollama by going to \"ollama.com\"."
-        "Simply download the application and run it."
-        "No GUI will popup, it'll simply run on your device with a small icon displayed in your taskbar."
-        "Open up a terminal on your device and type \"ollama pull llama3.1\"."
-        "You should be good to go."
+        "Once the game loads go to the settings tab and click \"AI Models\" to begin setting up the mod completely."
 
-        menu:
-            "Do you understand?"
-
-            "Yes.":
-                "Yes."
-
-            "Whatever.":
-                play sound "assets/audio/sfx/vine-boom.mp3"
-                show rlly
-                hide rlly with Dissolve(3)
-                "Whatever."
-
-        "There is a far more detailed setup guide and examples of how the mod works in the Main Menu of the game, just click \"Help\"."
 
     jump ai_mod_notice
 
