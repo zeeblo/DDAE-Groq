@@ -962,9 +962,15 @@ init python:
 #default num = None
 init python:
     import os
+    import ollama
+
     chats = ""
     try: chats = os.listdir(f"{config.basedir}/chats")
     except FileNotFoundError: pass
+
+    ai_list = []
+    for i in ollama.list()["models"]:
+        ai_list.append(i["name"])
     
 
 screen file_slots(title):
@@ -1101,13 +1107,15 @@ screen select_model_name_screen():
 
             vbox:
                 if llm_mode == True:
-                    label _(f"Suggested Models")
-                    for model in fav_local_models:
-                        textbutton _(f"{model}") action Show(screen="basic_popup", title="Local Models", message="Sucessfully updated model!", ok_action=Function(FinishUpdateModelName, model))
+                    label _(f"Your Models")
+                    if ai_list == []:
+                        textbutton _("None") action NullAction()
+                    else:
+                        for model in ai_list:
+                            textbutton _(f"{model}") action Show(screen="basic_popup", title="Local Models", message="Sucessfully updated model!", ok_action=Function(FinishUpdateModelName, model))
 
                     label _(f"Other Models")
-                    for model in other_local_models:
-                        textbutton _(f"{model}") action Show(screen="basic_popup", title="Local Models", message="Sucessfully updated model!", ok_action=Function(FinishUpdateModelName, model))
+                    textbutton _("Download Model") action Jump("custom_chat_model_label")
 
                 else:
 
@@ -1116,8 +1124,8 @@ screen select_model_name_screen():
                         textbutton _(f"{model}") action Show(screen="basic_popup", title="API Models", message="Sucessfully updated model!", ok_action=Function(FinishUpdateModelName, model))
 
 
-                label _(f"Other Models")
-                textbutton _("Custom Model") action Jump("custom_chat_model_label")
+                    label _(f"Other Models")
+                    textbutton _("Custom Model") action Jump("custom_chat_model_label")
 
 
 
