@@ -66,7 +66,6 @@ label start:
             wrapped_sentences.reverse()
             return wrapped_sentences
 
-
         def speak(current_char_title, message):
             global cur_speaker
             """
@@ -98,7 +97,7 @@ label start:
         jump space_zone
     else:
         call screen bio_screen
-        
+
 
     return
 
@@ -110,7 +109,7 @@ label nameWorld_label:
     scene theme
 
     $ motto = renpy.random.randint(1,315)
-    if motto == 15:    
+    if motto == 15:
         scene black with dissolve
         play sound "<from 0 to 9>bgm/end-voice.ogg"
         $ renpy.pause(11, hard=True)
@@ -135,14 +134,13 @@ define yuri = Character("Yuri", color="#ffffff", window_style="textbox_yuri", wh
 default choice = None
 
 label AICharacter:
-    $ tokenSetter.set_token()
     $ persistent.in_game = True
     $ renpy.save_persistent()
     stop music
     $ custom_quick_menu = True
     scene black with dissolve
 
-
+    
 
     $ resume = None # Used to check if a file has been loaded
     $ zone_type = None
@@ -171,7 +169,7 @@ label AICharacter:
 
         show unseen with Dissolve(space_line_time/2)
         $ renpy.pause(delay=space_line_time/2, hard=True)
-
+        
         $ Configs().delete_egg(f"{config.basedir}/game/assets/audio/sfx/_space-lines.mp3")
 
 
@@ -191,7 +189,7 @@ label AICharacter:
             $ renpy.log(">>> in saved game")
 
     else:
-        $ chatFolderName = renpy.input("Name This Realm:", "realm", allow=" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_").strip()
+        $ chatFolderName = renpy.input("Name This Realm: ", "realm", allow=" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_").strip()
         $ chatSetup = SetupChat(chat_name=chatFolderName, character_name=character_name)
         $ pathSetup = chatSetup.setup(purgatory=False)
 
@@ -213,6 +211,14 @@ label AICharacter:
         $ renpy.log(">>> starting new ")
         $ convo = chatSetup.generated_text
 
+
+
+    # An Error happened, so stop the current session and return to lobby
+    if convo.startswith("<|Error|>"):
+        $ convo = convo.replace("<|Error|>", "")
+        show screen error_popup(message=convo)
+        "Returning to main menu..."
+        return
 
 
     ###########################
@@ -312,7 +318,7 @@ label AICharacter:
             $ user_msg = "continue"
         else:
             while user_msg.strip() == "":
-                $ user_msg = renpy.input("Enter a message:")
+                $ user_msg = renpy.input("Enter a message: ")
 
             if user_msg  == "init_end_sim" and character_name == "monika":
                 $ main_event_loop = False
@@ -350,7 +356,8 @@ label AICharacter:
         $ current_background = Data(path_to_user_dir=pathSetup).getSceneData("background")
 
 
-        if final_msg.startswith("<Error>"):
+        if final_msg.startswith("<|Error|>"):
+            $ final_msg = final_msg.replace("<|Error|>", "")
             show screen error_popup(message=final_msg)
         else:
 
@@ -374,7 +381,7 @@ label AICharacter:
                 image full_sprite:
                     im.Composite((960, 960), (0, 0), f"{current_char}/{current_head}")
                     uppies
-                
+
             else:
                 image custom_basic:
                     im.Composite((960, 960), (0, 0), f"assets/imgs/characters/{current_char_title}/{current_left}", (0, 0), f"assets/imgs/characters/{current_char_title}/{current_right}", (0, 0), f"assets/imgs/characters/{current_char_title}/{current_head}")
