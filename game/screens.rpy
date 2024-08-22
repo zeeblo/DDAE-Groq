@@ -577,11 +577,6 @@ init python:
         renpy.save_persistent()
 
 
-    def FinishEnterPromptHeader():
-        persistent.prompt_header = prompt_header
-        renpy.save_persistent()
-        renpy.hide_screen("prompt_header_input")
-        renpy.show_screen("llm_model_config_screen")
 
         
 
