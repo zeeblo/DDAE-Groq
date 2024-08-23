@@ -5,7 +5,6 @@ init python:
     import ollama
     import httpx
 
-
     class TextModel:
 
 
@@ -67,5 +66,32 @@ init python:
                 return  result.strip()
 
             except requests.exceptions.RequestException as e:
-                print(f"Error making request: {e}")
-                return False, f"<Error> {e}"
+                return False, f"<|Error|> {e}"
+
+        """
+        def getGroq(self, prompt):
+            import groq
+            from groq import Groq
+            
+            client = Groq(api_key=persistent.chatToken)
+            try:        
+                response = client.chat.completions.create(
+                    messages=prompt,
+                    model=persistent.chatModel,
+                    temperature=persistent.temp,
+                    max_tokens=200,
+                    stop="[END]",
+                    stream=False,
+                )
+                result = response.choices[0].message.content
+                if "[END]" not in result:
+                    return result.strip() + " [END]"
+                return result.strip()
+            except groq.APIConnectionError as e:
+                return False, "<|Error|> Your wifi isn't on"
+            except groq.RateLimitError as e:
+                return False, "<|Error|> You're being ratelimited, come back another time."
+            except groq.APIStatusError as e:
+                return False, f"<|Error|> The model \"{persistent.chatModel}\" is not recognized OR something else is wrong."
+
+        """
