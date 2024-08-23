@@ -21,13 +21,13 @@ In DDAE click on settings and make sure "AI Type" is set to "API"
 
 <img style="width: 180px;" src="https://i.imgur.com/jXbFL0d.png" alt="ai type">
 
-Next click on "Model Names" and select any model you want.
+Next click on "AI Models" and select any model you want.
 
 <img style="width: 280px;" src="https://i.imgur.com/c0wjlPh.png" alt="model names">
 
 Go back to the main settings and select "API Key"
 
-<img style="width: 580px;" src="https://i.imgur.com/0AmMdUk.png" alt="ddlc api key">
+<img style="width: 580px;" src="https://i.imgur.com/8Hy87oX.png" alt="ddlc api key">
 
 
 Paste in the API key you copied from earlier
