@@ -1400,9 +1400,10 @@ image monika_bg_highlight:
     function monika_alpha
 
 
-image unseen:
-    truecenter
-    "assets/imgs/cg/unseen.png"
+
+image s_kill_bg:
+    subpixel True
+    "images/cg/s_kill_bg.png"
 
 
 

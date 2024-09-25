@@ -53,4 +53,3 @@ Paste in the API key you copied from earlier
 
 - Thanks to Retronika & iiTzWolfyy for the Character template gui & script used when a user first creates a realm
 - sutemo for the male sprites https://sutemo.itch.io/male-character-sprite-for-visual-novel
-- midjorney generated render of Monika (used in the only CG scene in the game)
